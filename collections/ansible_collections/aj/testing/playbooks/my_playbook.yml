@@ -5,5 +5,5 @@
   tasks:
     - name: Testing role
       ansible.builtin.include_role:
-        name: foo.bar.my_role
+        name: aj.testing.my_role
         tasks_from: main.yml
