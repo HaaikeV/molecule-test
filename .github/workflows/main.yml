@@ -1,6 +1,20 @@
 ---
 name: Molecule Test
-on: [push, pull_request]
+on:
+  push:
+    paths: 
+    - 'collections/ansible_collections/**'
+    - 'collections/ansible_collections/aj/testing/**'
+    - 'collections/ansible_collections/aj/testing/roles/my_role/**'
+    - 'collections/ansible_collections/aj/testing/extensions/molecule/default/molecule.yml'
+    - '.github/workflows/main.yml'
+  pull_request:
+    paths:
+    - 'collections/ansible_collections/**'
+    - 'collections/ansible_collections/aj/testing/**'
+    - 'collections/ansible_collections/aj/testing/roles/my_role/**'
+    - 'collections/ansible_collections/aj/testing/extensions/molecule/default/molecule.yml'
+    - '.github/workflows/main.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
