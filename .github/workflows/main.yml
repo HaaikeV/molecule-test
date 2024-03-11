@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: 
-          path: molecule-test
+          path: molecule-test/collections/ansible_collections
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
