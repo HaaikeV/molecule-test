@@ -1,0 +1,24 @@
+---
+name: Molecule Test
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check out codebase
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install podman molecule ansible-core molecule[podman]
+      
+      - name: Test with molecule
+        run: |
+          molecule test -s default
