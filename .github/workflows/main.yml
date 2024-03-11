@@ -21,5 +21,4 @@ jobs:
       
       - name: Test with molecule
         run: |
-          molecule test
-        working-directory: ./collections/ansible_collections/
+          molecule test -s default
