@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install setuptools podman molecule ansible-core molecule[docker] "molecule-plugins[podman]"
+          python3 -m pip install setuptools podman molecule ansible-core molecule-plugins[docker]
       
       - name: Test with molecule
         run: |
